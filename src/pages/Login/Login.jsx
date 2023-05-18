@@ -1,16 +1,29 @@
 /* eslint-disable react/no-unescaped-entities */
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import google from '../../assets/google.png';
 import login from '../../assets/login.png';
 
 const Login = () => {
+	useEffect(() => {
+		AOS.init({
+			delay: 200, // values from 0 to 3000, with step 50ms
+			duration: 600,
+		});
+	}, []);
 	return (
 		<div className='hero my-24'>
 			<div className='hero-content flex-col lg:flex-row-reverse gap-20'>
-				<figure className='max-w-2xl'>
+				<figure data-aos='fade-left' className='max-w-2xl'>
 					<img src={login} alt='' />
 				</figure>
-				<div className='card flex-shrink-0 w-full max-w-sm border-2 border-primary hover:border-secondary bg-base-100 py-5'>
+				<div
+					data-aos='fade-right'
+					className='card flex-shrink-0 w-full max-w-sm border-2 border-primary hover:border-secondary bg-base-100 py-5'
+				>
 					<h1 className='text-3xl text-center font-medium'>Login</h1>
 					<form className='card-body -my-4'>
 						<div className='form-control'>
