@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&display=swap');
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .squeeze {
 	@apply transform active:scale-90 transition-transform;
+}
+.bttn {
+	@apply px-5 py-4 rounded-md bg-gradient-to-r from-[#5E60CE] to-[#4EA8DE] font-semibold;
 }

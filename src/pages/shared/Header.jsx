@@ -2,6 +2,12 @@ import { Link } from 'react-router-dom';
 import car from '../../assets/car.svg';
 
 const Header = () => {
+	const logo = (
+		<div className='flex flex-col items-center'>
+			<img className='w-24' src={car} alt='' />
+			<span className='-mt-4 text-lg font-medium'>Incy Wincy Cars</span>
+		</div>
+	);
 	const navBar = (
 		<>
 			<li>
@@ -53,17 +59,11 @@ const Header = () => {
 						</ul>
 					</div>
 					<Link to='/' className='hidden lg:block'>
-						<div className='flex flex-col items-center'>
-							<img className='w-24' src={car} alt='' />
-							<span className='-mt-4 text-md font-medium'>Incy Wincy Cars</span>
-						</div>
+						{logo}
 					</Link>
 				</div>
 				<Link to='/' className='lg:hidden block navbar-center'>
-					<div className=' flex flex-col items-center'>
-						<img className='w-24' src={car} alt='' />
-						<span className='-mt-4 text-md font-medium'>Incy Wincy Cars</span>
-					</div>
+					{logo}
 				</Link>
 				<div className='navbar-center hidden lg:flex'>
 					<ul className='menu menu-horizontal px-1'>{navBar}</ul>
