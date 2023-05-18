@@ -7,8 +7,8 @@ import car from '../../assets/car.svg';
 
 const Footer = () => {
 	return (
-		<>
-			<div className='container grid  md:grid-cols-2 lg:grid-cols-3 gap-14 py-14'>
+		<div className='shadow-inner'>
+			<div className='container grid  md:grid-cols-2 lg:grid-cols-3 gap-14 py-14 '>
 				<div className=''>
 					<Link to='/' className='flex items-center gap-2'>
 						<div className='flex flex-col items-center'>
@@ -76,7 +76,7 @@ const Footer = () => {
 					Faysal 2023.
 				</p>
 			</div>
-		</>
+		</div>
 	);
 };
 

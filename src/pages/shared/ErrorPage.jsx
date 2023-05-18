@@ -14,7 +14,7 @@ const ErrorPage = () => {
 				{error?.message}
 			</p>
 			<div className='text-center my-10'>
-				<button className='bttn squeeze'>
+				<button className='bttn squeeze text-white'>
 					<Link to='/'>Back to Homepage</Link>
 				</button>
 			</div>
