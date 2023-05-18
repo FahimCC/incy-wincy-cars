@@ -16,9 +16,9 @@ const Footer = () => {
 							<span className='-mt-4 text-md font-medium'>Incy Wincy Cars</span>
 						</div>
 					</Link>
-					<p className='text-black my-5'>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-						facere illum mollitia nostrum neque, aut aperiam.
+					<p className='max-w-xs text-black my-5'>
+						You can know or not know how a car runs and still enjoy riding in a
+						car.
 					</p>
 					<div className='flex gap-3 text-3xl text-primary'>
 						<Link>

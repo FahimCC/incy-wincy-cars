@@ -4,8 +4,8 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				primary: '#5E60CE',
-				secondary: '#4EA8DE',
+				primary: '#4EA8DE',
+				secondary: '#5E60CE',
 			},
 			fontFamily: {
 				kanit: ['Kanit', 'sans-serif'],
