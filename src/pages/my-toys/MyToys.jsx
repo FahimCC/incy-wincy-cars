@@ -35,7 +35,7 @@ const MyToys = () => {
 								<div className='avatar'>
 									<div className='mask mask-squircle w-12 h-12'>
 										<img
-											src='/tailwind-css-component-profile-2@56w.png'
+											src='https://m.media-amazon.com/images/I/71HA0rWAjOL._AC_UF1000,1000_QL80_.jpg'
 											alt='Avatar Tailwind CSS Component'
 										/>
 									</div>

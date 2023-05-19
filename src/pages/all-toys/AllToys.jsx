@@ -1,6 +1,7 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const AllToys = () => {
 	useEffect(() => {
@@ -45,9 +46,12 @@ const AllToys = () => {
 							<td>Canada</td>
 							<td>12/16/2020</td>
 							<td>
-								<div className='squeeze badge badge-info cursor-pointer'>
+								<Link
+									to='/view-toy'
+									className='squeeze badge badge-info cursor-pointer'
+								>
 									View Details
-								</div>
+								</Link>
 							</td>
 						</tr>
 					</tbody>

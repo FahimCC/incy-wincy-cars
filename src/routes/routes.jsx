@@ -34,7 +34,7 @@ const router = createBrowserRouter([
 				),
 			},
 			{
-				path: '/view-toys',
+				path: '/view-toy',
 				element: (
 					<PrivateRoute>
 						<ViewToy />
