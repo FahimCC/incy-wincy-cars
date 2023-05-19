@@ -3,6 +3,7 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useContext, useEffect, useState } from 'react';
+import { toast } from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import google from '../../assets/google.png';
 import login from '../../assets/login.png';
@@ -33,6 +34,7 @@ const Login = () => {
 
 		signIn(email, password)
 			.then(result => {
+				toast.success('Successfully Login');
 				const loggedUser = result.user;
 				console.log(loggedUser);
 				form.reset();
@@ -48,6 +50,7 @@ const Login = () => {
 	const handleGoogleLogin = () => {
 		googleSignIn()
 			.then(result => {
+				toast.success('Successfully Login');
 				const loggedUser = result.user;
 				console.log(loggedUser);
 				setErr('');
