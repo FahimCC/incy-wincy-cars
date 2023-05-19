@@ -54,7 +54,7 @@ const Header = () => {
 				<div className='navbar'>
 					<div className='navbar-start '>
 						<div className='dropdown'>
-							<label tabIndex={0} className='btn btn-ghost lg:hidden '>
+							<label tabIndex={0} className=' -ml-3 btn btn-ghost lg:hidden '>
 								<svg
 									xmlns='http://www.w3.org/2000/svg'
 									className='h-5 w-5'
@@ -91,7 +91,7 @@ const Header = () => {
 						{!user ? (
 							<Link
 								to='/login'
-								className='text-sm md:text-base px-4 py-2 outline outline-primary squeeze hover:outline-secondary rounded-lg'
+								className='text-sm md:text-base px-2 py-1 md:px-4 md:py-2 outline outline-primary squeeze hover:outline-secondary rounded-lg'
 							>
 								Login
 							</Link>

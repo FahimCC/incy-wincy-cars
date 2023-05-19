@@ -23,14 +23,15 @@ const Login = () => {
 	const handleLogin = event => {
 		event.preventDefault();
 		const form = event.target;
-		const name = form.name.value;
+		const email = form.email.value;
 		const password = form.password.value;
-		console.log(name, password);
+		console.log(email, password);
 
-		signIn(name, password)
+		signIn(email, password)
 			.then(result => {
 				const loggedUser = result.user;
 				console.log(loggedUser);
+				form.reset();
 				setErr('');
 			})
 			.then(error => {

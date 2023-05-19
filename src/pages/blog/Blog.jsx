@@ -11,8 +11,8 @@ const Blog = () => {
 		});
 	}, []);
 	return (
-		<div data-aos='fade-up' className='container '>
-			<div className='my-14 border-2 border-primary rounded-lg p-4 md:px-20 md:py-10'>
+		<div data-aos='fade-up' className='container'>
+			<div className='my-14 border-2 border-primary rounded-lg p-4 md:px-20 md:py-10 bg-gray-100'>
 				<h1 className='text-3xl underline text-center mb-8'>Blog</h1>
 				<div>
 					<div className='my-4'>
