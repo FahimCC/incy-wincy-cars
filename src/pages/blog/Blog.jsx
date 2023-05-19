@@ -1,7 +1,17 @@
 /* eslint-disable react/no-unescaped-entities */
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
+
 const Blog = () => {
+	useEffect(() => {
+		AOS.init({
+			delay: 200, // values from 0 to 3000, with step 50ms
+			duration: 600,
+		});
+	}, []);
 	return (
-		<div className='container '>
+		<div data-aos='fade-up' className='container '>
 			<div className='my-14 border-2 border-primary rounded-lg p-4 md:px-20 md:py-10'>
 				<h1 className='text-3xl underline text-center mb-8'>Blog</h1>
 				<div>
