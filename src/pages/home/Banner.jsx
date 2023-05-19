@@ -16,7 +16,7 @@ const Banner = () => {
 							of a toy car, made large enough for an adult's hand and
 							imagination to grasp.
 						</p>
-						<button className='text-sm md:text-base px-4 py-2 outline outline-white squeeze hover:outline-primary'>
+						<button className='text-sm md:text-base px-4 py-2 outline outline-white squeeze hover:outline-primary hover:rounded-lg'>
 							Learn More
 						</button>
 					</div>
