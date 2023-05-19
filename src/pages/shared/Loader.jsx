@@ -7,7 +7,7 @@ const Loader = () => {
 				stroke='#4EA8DE'
 				viewBox='0 0 57 57'
 				xmlns='http://www.w3.org/2000/svg'
-				data-testId='ball-triangle-svg'
+				data-testid='ball-triangle-svg'
 			>
 				<g fill='none' fillRule='evenodd'>
 					<g transform='translate(1 1)' strokeWidth='2'>

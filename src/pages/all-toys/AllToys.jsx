@@ -20,7 +20,9 @@ const AllToys = () => {
 							placeholder='Search Toy Name'
 							className='input input-bordered input-info w-full min-w-full'
 						/>
-						<button className='squeeze bg-primary px-4'>Search</button>
+						<button className='squeeze bg-primary px-4 text-white'>
+							Search
+						</button>
 					</div>
 				</form>
 			</div>

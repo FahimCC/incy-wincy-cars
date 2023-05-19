@@ -11,22 +11,22 @@ const AddAToys = () => {
 
 	return (
 		<div className='container my-20 '>
-			<div className='border-2 border-secondary p-5 md:p-10 rounded-lg'>
-				<h2 className='text-center text-xl md:text-3xl font-medium mb-8 underline'>
+			<div className='border-4 hover:border-double border-secondary p-5 md:p-10 rounded-lg'>
+				<h1 className='clip text-center font-medium text-3xl lg:text-5xl  mb-10'>
 					Add Toy
-				</h2>
+				</h1>
 				<form onSubmit={handleSubmit(onSubmit)} className='space-y-5'>
 					<div className='flex flex-col md:flex-row gap-5'>
 						<input
 							type='text'
 							placeholder='Toy photo URL'
-							className='input'
+							className='insert'
 							{...register('Toy photo URL', { required: true })}
 						/>
 						<input
 							type='text'
 							placeholder='Toy Name'
-							className='input'
+							className='insert'
 							{...register('Toy Name', { required: true })}
 						/>
 					</div>
@@ -34,13 +34,13 @@ const AddAToys = () => {
 						<input
 							type='text'
 							placeholder='Seller Name'
-							className='input'
+							className='insert'
 							{...register('Seller Name', { required: true })}
 						/>
 						<input
 							type='email'
 							placeholder='Seller Email'
-							className='input'
+							className='insert'
 							{...register('Seller Email', { required: true })}
 						/>
 					</div>
@@ -48,13 +48,13 @@ const AddAToys = () => {
 						<input
 							type='text'
 							placeholder='Sub-category'
-							className='input'
+							className='insert'
 							{...register('Sub-category', { required: true })}
 						/>
 						<input
 							type='text'
 							placeholder='price'
-							className='input'
+							className='insert'
 							{...register('price', { required: true })}
 						/>
 					</div>
@@ -62,13 +62,13 @@ const AddAToys = () => {
 						<input
 							type='text'
 							placeholder='Ratings'
-							className='input'
+							className='insert'
 							{...register('Ratings', { required: true })}
 						/>
 						<input
 							type='text'
 							placeholder='Available Quantity'
-							className='input'
+							className='insert'
 							{...register('Available Quantity', { required: true })}
 						/>
 					</div>
