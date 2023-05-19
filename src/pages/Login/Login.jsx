@@ -3,7 +3,7 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import google from '../../assets/google.png';
 import login from '../../assets/login.png';
 import { AuthContext } from '../../provider/AuthProvider';
@@ -19,6 +19,10 @@ const Login = () => {
 	const [err, setErr] = useState('');
 
 	const { signIn, googleSignIn } = useContext(AuthContext);
+	const navigate = useNavigate();
+	const location = useLocation();
+
+	const from = location?.state?.from?.pathname || '/';
 
 	const handleLogin = event => {
 		event.preventDefault();
@@ -33,8 +37,9 @@ const Login = () => {
 				console.log(loggedUser);
 				form.reset();
 				setErr('');
+				navigate(from, { replace: true });
 			})
-			.then(error => {
+			.catch(error => {
 				setErr(error.message);
 				console.log(error);
 			});
@@ -45,9 +50,12 @@ const Login = () => {
 			.then(result => {
 				const loggedUser = result.user;
 				console.log(loggedUser);
+				setErr('');
+				navigate(from, { replace: true });
 			})
-			.then(error => {
+			.catch(error => {
 				console.log(error);
+				setErr(error?.message);
 			});
 	};
 
@@ -106,7 +114,11 @@ const Login = () => {
 					</Link>
 					<p className='text-center my-4'>
 						Don't have an account?
-						<Link to='/register' className='text-primary hover:underline pl-2'>
+						<Link
+							to='/register'
+							state={{ from: location?.state }}
+							className='text-primary hover:underline pl-2'
+						>
 							Register
 						</Link>
 					</p>

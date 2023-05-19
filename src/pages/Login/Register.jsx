@@ -1,7 +1,8 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import register from '../../assets/register.png';
 import { AuthContext } from '../../provider/AuthProvider';
 
@@ -16,6 +17,10 @@ const Register = () => {
 	const [err, setErr] = useState('');
 	const [password, setPassword] = useState('');
 	const [passwordErr, setPasswordErr] = useState('');
+	const navigate = useNavigate();
+	const location = useLocation();
+
+	const from = location?.state?.from?.pathname || '/';
 
 	const { createUser, updateUserProfile } = useContext(AuthContext);
 
@@ -43,6 +48,10 @@ const Register = () => {
 
 		createUser(email, password)
 			.then(result => {
+				Swal.fire({
+					icon: 'success',
+					title: 'Registration Successful',
+				});
 				const loggedUser = result.user;
 				console.log(loggedUser);
 				setErr('');
@@ -51,10 +60,12 @@ const Register = () => {
 					.catch(err => {
 						console.log(err);
 					});
+
+				navigate(from, { replace: true });
 			})
-			.then(error => {
+			.catch(error => {
 				console.log(error?.message);
-				setErr(error);
+				setErr(error?.message);
 			});
 	};
 
@@ -119,7 +130,7 @@ const Register = () => {
 							</label>
 							<input
 								type='text'
-								placeholder='password'
+								placeholder='photo URL'
 								name='photoURL'
 								className='input input-bordered'
 								required
@@ -131,11 +142,7 @@ const Register = () => {
 							</label>
 						)}
 						<div className='form-control mt-6'>
-							<button
-								type='submit'
-								className='bttn squeeze text-white'
-								// disabled={!err && !passwordErr ? true : false}
-							>
+							<button type='submit' className='bttn squeeze text-white'>
 								Register
 							</button>
 						</div>

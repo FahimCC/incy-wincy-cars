@@ -1,13 +1,14 @@
 import { createBrowserRouter } from 'react-router-dom';
 import MainLayout from '../layouts/MainLayout';
+import Login from '../pages/Login/Login';
+import Register from '../pages/Login/Register';
 import AddAToys from '../pages/add-a-toys/AddAToys';
 import AllToys from '../pages/all-toys/AllToys';
 import Blog from '../pages/blog/Blog';
 import Home from '../pages/home/Home';
-import Login from '../pages/login/Login';
-import Register from '../pages/login/Register';
 import MyToys from '../pages/my-toys/MyToys';
 import ErrorPage from '../pages/shared/ErrorPage';
+import PrivateRoute from './PrivateRoute';
 
 const router = createBrowserRouter([
 	{
@@ -21,15 +22,27 @@ const router = createBrowserRouter([
 			},
 			{
 				path: '/all-toys',
-				element: <AllToys />,
+				element: (
+					<PrivateRoute>
+						<AllToys />
+					</PrivateRoute>
+				),
 			},
 			{
 				path: '/my-toys',
-				element: <MyToys />,
+				element: (
+					<PrivateRoute>
+						<MyToys />
+					</PrivateRoute>
+				),
 			},
 			{
 				path: '/add-a-toys',
-				element: <AddAToys />,
+				element: (
+					<PrivateRoute>
+						<AddAToys />
+					</PrivateRoute>
+				),
 			},
 			{
 				path: '/login',

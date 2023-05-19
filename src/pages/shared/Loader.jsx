@@ -1,13 +1,13 @@
-export const Loader = () => {
+const Loader = () => {
 	return (
-		<div className='w-full h-full flex items-center justify-center'>
+		<div className='w-full flex items-center justify-center h-[calc(100vh-476px)]'>
 			<svg
 				height='100'
 				width='100'
 				stroke='#4EA8DE'
 				viewBox='0 0 57 57'
 				xmlns='http://www.w3.org/2000/svg'
-				data-testid='ball-triangle-svg'
+				data-testId='ball-triangle-svg'
 			>
 				<g fill='none' fillRule='evenodd'>
 					<g transform='translate(1 1)' strokeWidth='2'>
@@ -77,3 +77,5 @@ export const Loader = () => {
 		</div>
 	);
 };
+
+export default Loader;
