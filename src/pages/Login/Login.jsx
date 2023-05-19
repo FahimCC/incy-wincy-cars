@@ -2,10 +2,11 @@
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import google from '../../assets/google.png';
 import login from '../../assets/login.png';
+import { AuthContext } from '../../provider/AuthProvider';
 
 const Login = () => {
 	useEffect(() => {
@@ -14,6 +15,41 @@ const Login = () => {
 			duration: 600,
 		});
 	}, []);
+
+	const [err, setErr] = useState('');
+
+	const { signIn, googleSignIn } = useContext(AuthContext);
+
+	const handleLogin = event => {
+		event.preventDefault();
+		const form = event.target;
+		const name = form.name.value;
+		const password = form.password.value;
+		console.log(name, password);
+
+		signIn(name, password)
+			.then(result => {
+				const loggedUser = result.user;
+				console.log(loggedUser);
+				setErr('');
+			})
+			.then(error => {
+				setErr(error.message);
+				console.log(error);
+			});
+	};
+
+	const handleGoogleLogin = () => {
+		googleSignIn()
+			.then(result => {
+				const loggedUser = result.user;
+				console.log(loggedUser);
+			})
+			.then(error => {
+				console.log(error);
+			});
+	};
+
 	return (
 		<div className='hero my-24'>
 			<div className='hero-content flex-col lg:flex-row-reverse gap-20'>
@@ -25,7 +61,7 @@ const Login = () => {
 					className='card flex-shrink-0 w-full max-w-sm border-2 border-primary hover:border-secondary bg-base-100 py-5'
 				>
 					<h1 className='text-3xl text-center font-medium'>Login</h1>
-					<form className='card-body -my-4'>
+					<form onSubmit={handleLogin} className='card-body -my-4'>
 						<div className='form-control'>
 							<label className='label'>
 								<span className='label-text'>Email</span>
@@ -50,9 +86,7 @@ const Login = () => {
 								required
 							/>
 							<label className='label'>
-								<a href='#' className='label-text-alt link link-hover'>
-									Forgot password?
-								</a>
+								<p className='label-text-alt text-error'>{err}</p>
 							</label>
 						</div>
 						<div className='form-control mt-6'>
@@ -62,7 +96,10 @@ const Login = () => {
 						</div>
 					</form>
 					<div className='divider px-8'>OR</div>
-					<Link className='border-2 mt-2 mx-8 h-10 flex justify-center items-center px-3 py-1 rounded-lg squeeze'>
+					<Link
+						onClick={handleGoogleLogin}
+						className='border-2 mt-2 mx-8 h-10 flex justify-center items-center px-3 py-1 rounded-lg squeeze'
+					>
 						<img className='w-11 h-8' src={google} alt='' />
 						<span className='-ml-1'>Continue with Google</span>
 					</Link>
