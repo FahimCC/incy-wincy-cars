@@ -1,0 +1,68 @@
+[
+	{
+		"photoUrl": "https://m.media-amazon.com/images/I/71+DXlMNnKS.jpg?fbclid=IwAR3mMywFAp42mLs9ieNoWqtPjTUP1bcSjvJwezPRuBsDXpI0tXtInPABFEQ",
+		"toyName": "Yellow Monster Truck",
+		"sellerName": "Fahim Faysal",
+		"sellerEmail": "ffnasif@gmail.com",
+		"subCategory": "monster-truck",
+		"price": 17.5,
+		"ratings": 5,
+		"availableQuantity": 200,
+		"detailsDescription": "The monster-truck toy car is a rugged and powerful miniature vehicle inspired by real-life monster trucks. With oversized wheels, a durable chassis, and bold designs, it's perfect for high-speed off-road adventures and thrilling stunts."
+	},
+	{
+		"photoUrl": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71b5MODxF7L._AC_SL1500_.jpg?fbclid=IwAR0CA0LVMky1YsANYCaSnivyFbyQaXq63iV_IfMCFZ9SNS1sw8a_S7XlITk",
+		"toyName": "Orange Monster Truck",
+		"sellerName": "Fahim Faysal",
+		"sellerEmail": "ffnasif@gmail.com",
+		"subCategory": "monster-truck",
+		"price": 20,
+		"ratings": 5,
+		"availableQuantity": 180,
+		"detailsDescription": "The monster-truck toy car is a miniature beast on wheels, designed to conquer any terrain. Its massive tires, sturdy build, and aggressive styling make it a thrilling and unstoppable force in the world of toy vehicles."
+	},
+	{
+		"photoUrl": "https://static-01.daraz.com.bd/p/bf3d2a2986c9935a30074010bd64b80a.jpg?fbclid=IwAR01wBbLkhhw4r0pyHOpqH7gL80JeVnz4hSgqjJNyKN-6dX_ESb2nUQUsx0",
+		"toyName": "Ambulance",
+		"sellerName": "Fahim Faysal",
+		"sellerEmail": "ffnasif@gmail.com",
+		"subCategory": "ambulance",
+		"price": 10,
+		"ratings": 4.5,
+		"availableQuantity": 150,
+		"detailsDescription": "The ambulance toy car is a lifelike replica of an emergency medical vehicle. With flashing lights, siren sounds, and detailed features, it provides imaginative play as children simulate rescue missions and aid in their make-believe emergencies."
+	},
+	{
+		"photoUrl": "https://images.othoba.com/images/thumbs/0507103_white-ambulance-vehicles-toys-diecast-car-model-with-lightsound-gift-for-kids.webp?fbclid=IwAR16a2aPAs67VJEyHWK5vK9lqpkjtXhMQHt0UsRKrLqso9YE7K3r3ck0isU",
+		"toyName": "Ambulance",
+		"sellerName": "Fahim Faysal",
+		"sellerEmail": "ffnasif@gmail.com",
+		"subCategory": "ambulance",
+		"price": 12,
+		"ratings": 4,
+		"availableQuantity": 130,
+		"detailsDescription": "The ambulance toy car is a miniature hero on wheels, ready to save the day. Complete with emergency lights, a siren, and intricate details, it sparks imaginative play and encourages kids to role-play as brave paramedics."
+	},
+	{
+		"photoUrl": "https://www.littleriders.com.au/assets/full/JH-103.jpg?20230419134613",
+		"toyName": "Army Jeep",
+		"sellerName": "Fahim Faysal",
+		"sellerEmail": "ffnasif@gmail.com",
+		"subCategory": "jeep",
+		"price": 14.5,
+		"ratings": 5,
+		"availableQuantity": 250,
+		"detailsDescription": "The army jeep toy car is a scaled-down replica of a military vehicle, inspired by real-life transport used by armed forces. With camouflage paint, rugged features, and a sense of duty, it fuels exciting imaginative missions and battles."
+	},
+	{
+		"photoUrl": "https://ridefirstdrive.com/cdn/shop/products/d4b21e651f2e1eb76b4ba3d0ccac409b.jpg?v=1676225771&fbclid=IwAR3an4AMwHvBpVSRbbV7W1blAnWoo04SaIm5mgrwUwA7OD9wqXKilQfK0mw",
+		"toyName": "Black Jeep",
+		"sellerName": "Fahim Faysal",
+		"sellerEmail": "ffnasif@gmail.com",
+		"subCategory": "jeep",
+		"price": 15.99,
+		"ratings": 4.5,
+		"availableQuantity": 210,
+		"detailsDescription": "The jeep toy car is a miniaturized version of the legendary off-road vehicle. With its rugged design, four-wheel drive, and open-top styling, it's perfect for thrilling adventures and exploring imaginary landscapes with endless possibilities."
+	}
+]
