@@ -5,7 +5,7 @@ import Header from '../pages/shared/Header';
 
 const MainLayout = () => {
 	return (
-		<div className='font-kanit'>
+		<div className='font-bubblegum'>
 			<Header />
 			<Outlet />
 			<Footer />

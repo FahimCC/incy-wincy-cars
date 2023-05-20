@@ -2,7 +2,7 @@ import { Rating } from '@smastrom/react-rating';
 
 const CustomerReview = () => {
 	return (
-		<div className='container my-20'>
+		<div className='container my-36'>
 			<h1 className='clip text-center font-medium text-3xl lg:text-5xl mb-10'>
 				Customer Review
 			</h1>
@@ -14,9 +14,10 @@ const CustomerReview = () => {
 						</div>
 					</div>
 					<p className='my-5 text-center'>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
-						labore asperiores incidunt maiores maxime rerum minus, eius placeat
-						debitis aperiam.
+						"Absolutely love this toy car! The design is sleek and
+						attention-grabbing. It's made of durable materials and the remote
+						control works flawlessly. Provides endless fun for kids. Highly
+						recommended!"
 					</p>
 					<h2 className='text-2xl mb-3'>Fahim Faysal</h2>
 					<Rating style={{ maxWidth: 150 }} value={4.5} readOnly />
@@ -28,9 +29,9 @@ const CustomerReview = () => {
 						</div>
 					</div>
 					<p className='my-5 text-center'>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
-						labore asperiores incidunt maiores maxime rerum minus, eius placeat
-						debitis aperiam.
+						"Sleek design, durable, easy-to-use remote control, and long-lasting
+						rechargeable battery. Provides hours of entertainment for kids.
+						Highly recommended for young car enthusiasts."
 					</p>
 					<h2 className='text-2xl mb-3'>Fahim Faysal</h2>
 					<Rating style={{ maxWidth: 150 }} value={4} readOnly />

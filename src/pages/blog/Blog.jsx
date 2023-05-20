@@ -12,7 +12,7 @@ const Blog = () => {
 	}, []);
 	return (
 		<div data-aos='fade-up' className='container'>
-			<div className='my-14 border-4 hover:border-double border-secondary rounded-lg p-4 md:px-20 md:py-10 bg-gray-100'>
+			<div className='my-14 border-4 hover:border-double border-secondary rounded-lg p-4 md:px-20 md:py-10 bg-gray-50'>
 				<h1 className='clip text-center font-medium text-3xl lg:text-5xl  mb-10'>
 					Blog
 				</h1>

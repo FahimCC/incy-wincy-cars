@@ -8,7 +8,7 @@ export default {
 				secondary: '#5E60CE',
 			},
 			fontFamily: {
-				kanit: ['Kanit', 'sans-serif'],
+				bubblegum: ['Bubblegum Sans', 'cursive'],
 			},
 		},
 		container: {

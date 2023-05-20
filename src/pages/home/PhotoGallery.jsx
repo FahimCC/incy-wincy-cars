@@ -1,13 +1,13 @@
 const PhotoGallery = () => {
 	return (
-		<div className='container my-20'>
+		<div className='container my-36'>
 			<h1 className='clip text-center font-medium text-3xl lg:text-5xl mb-10'>
 				Photo Gallery
 			</h1>
 			<div className='grid grid-cols-2 md:grid-cols-4 gap-3  grid-flow-dense'>
 				<figure className=''>
 					<img
-						className='h-full w-full object-fill rounded-md rounded-md'
+						className='h-full w-full object-fill rounded-md'
 						src='https://w0.peakpx.com/wallpaper/406/827/HD-wallpaper-bulli-on-tour-car-bus-toys-van-trip-travel-wood-holiday-vw.jpg'
 						alt=''
 					/>
@@ -19,7 +19,7 @@ const PhotoGallery = () => {
 						alt=''
 					/>
 				</figure>
-				<figure className='h-48 col-span-2'>
+				<figure className='col-span-2'>
 					<img
 						className='h-full w-full object-fill rounded-md'
 						src='https://images.unsplash.com/photo-1520575839349-52ff2532d910?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGNhciUyMHRveXN8ZW58MHx8MHx8&w=1000&q=80'
