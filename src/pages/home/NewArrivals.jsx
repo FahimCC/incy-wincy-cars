@@ -106,7 +106,7 @@ const NewArrivals = () => {
 								src='https://m.media-amazon.com/images/I/71+DXlMNnKS.jpg?fbclid=IwAR1037E4JERpEpORtya9NHRtJZ3ZnbL2XQoW17oIbgwWUCSoVJZWMFKsjDQ'
 							/>
 						</div>
-						<h2 className='text-2xl'>Fire Truck</h2>
+						<h2 className='text-2xl'>Monster Truck</h2>
 						<p className='text-lg text-[#6930C3]'>$20.00</p>
 					</div>
 				</SwiperSlide>
