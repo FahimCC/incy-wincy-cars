@@ -1,5 +1,6 @@
 import { Rating } from '@smastrom/react-rating';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
@@ -54,7 +55,7 @@ const ToyTab = () => {
 							<h2 className='text-2xl'>{toy[0]?.toyName}</h2>
 							<p className='text-lg text-[#6930C3]'>${toy[0]?.price}</p>
 							<button className='my-3 btn btn-outline btn-info'>
-								View Details
+								<Link to={`/view-toy/${toy[0]?._id}`}>View Details</Link>
 							</button>
 							<Rating
 								style={{ maxWidth: 120 }}
@@ -75,7 +76,7 @@ const ToyTab = () => {
 							<h2 className='text-2xl'>{toy[1]?.toyName}</h2>
 							<p className='text-lg text-[#6930C3]'>${toy[1]?.price}</p>
 							<button className='my-3 btn btn-outline btn-info'>
-								View Details
+								<Link to={`/view-toy/${toy[0]?._id}`}>View Details</Link>
 							</button>
 							<Rating
 								style={{ maxWidth: 120 }}
@@ -100,7 +101,7 @@ const ToyTab = () => {
 							<h2 className='text-2xl'>{toy[0]?.toyName}</h2>
 							<p className='text-lg text-[#6930C3]'>${toy[0]?.price}</p>
 							<button className='my-3 btn btn-outline btn-info'>
-								View Details
+								<Link to={`/view-toy/${toy[0]?._id}`}>View Details</Link>
 							</button>
 							<Rating
 								style={{ maxWidth: 120 }}
@@ -121,7 +122,7 @@ const ToyTab = () => {
 							<h2 className='text-2xl'>{toy[1]?.toyName}</h2>
 							<p className='text-lg text-[#6930C3]'>${toy[1]?.price}</p>
 							<button className='my-3 btn btn-outline btn-info'>
-								View Details
+								<Link to={`/view-toy/${toy[0]?._id}`}>View Details</Link>
 							</button>
 							<Rating
 								style={{ maxWidth: 120 }}
@@ -146,7 +147,7 @@ const ToyTab = () => {
 							<h2 className='text-2xl'>{toy[0]?.toyName}</h2>
 							<p className='text-lg text-[#6930C3]'>${toy[0]?.price}</p>
 							<button className='my-3 btn btn-outline btn-info'>
-								View Details
+								<Link to={`/view-toy/${toy[0]?._id}`}>View Details</Link>
 							</button>
 							<Rating
 								style={{ maxWidth: 120 }}
@@ -167,7 +168,7 @@ const ToyTab = () => {
 							<h2 className='text-2xl'>{toy[1]?.toyName}</h2>
 							<p className='text-lg text-[#6930C3]'>${toy[1]?.price}</p>
 							<button className='my-3 btn btn-outline btn-info'>
-								View Details
+								<Link to={`/view-toy/${toy[0]?._id}`}>View Details</Link>
 							</button>
 							<Rating
 								style={{ maxWidth: 120 }}
