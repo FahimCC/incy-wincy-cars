@@ -24,6 +24,18 @@ const MyToys = () => {
 		loadData();
 	}, []);
 
+	const handleDelete = id => {
+		fetch(`http://localhost:5000/my_toys/${id}`, {
+			method: 'DELETE',
+		})
+			.then(res => res.json())
+			.then(data => {
+				console.log(data);
+				const remaining = toys.filter(toy => toy._id !== id);
+				setToys(remaining);
+			});
+	};
+
 	return (
 		<div className='container my-20'>
 			<div className='overflow-x-auto' data-aos='fade-up'>
@@ -68,7 +80,10 @@ const MyToys = () => {
 									{toy.detailsDescription}
 								</td>
 								<td className='space-x-2'>
-									<div className='squeeze badge badge-warning cursor-pointer'>
+									<div
+										onClick={() => handleDelete(toy._id)}
+										className='squeeze badge badge-warning cursor-pointer'
+									>
 										Update
 									</div>
 									<div className='squeeze badge badge-error cursor-pointer'>
