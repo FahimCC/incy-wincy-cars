@@ -24,7 +24,8 @@ const router = createBrowserRouter([
 			{
 				path: '/all-toys',
 				element: <AllToys />,
-				loader: () => fetch('http://localhost:5000/all_toys'),
+				loader: () =>
+					fetch('https://incy-wincy-cars-server.vercel.app/all_toys'),
 			},
 			{
 				path: '/my-toys',

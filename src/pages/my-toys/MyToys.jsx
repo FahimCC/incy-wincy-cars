@@ -17,7 +17,7 @@ const MyToys = () => {
 
 	useEffect(() => {
 		const loadData = async () => {
-			const res = await fetch(`http://localhost:5000/my_toys/${user.email}`);
+			const res = await fetch(`https://incy-wincy-cars-server.vercel.app/my_toys/${user.email}`);
 			const data = await res.json();
 			// console.log(data);
 			setToys(data);

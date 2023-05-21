@@ -9,7 +9,9 @@ const ViewToy = () => {
 
 	useEffect(() => {
 		const loadData = async () => {
-			const res = await fetch(`http://localhost:5000/view_toy/${id}`);
+			const res = await fetch(
+				`https://incy-wincy-cars-server.vercel.app/view_toy/${id}`
+			);
 			const data = await res.json();
 			setToy(data);
 			// console.log(data);
@@ -40,13 +42,13 @@ const ViewToy = () => {
 					<p>
 						<b>Details Description:</b> {toy.detailsDescription}
 					</p>
-					<div className='card-actions justify-end'>
-						<p className='text-xl'>
-							<b>Price:</b> ${toy.price}
-						</p>
-						<p>
-							<Rating style={{ maxWidth: 150 }} value={toy.ratings} readOnly />
-						</p>
+					<p className='text-2xl'>
+						<b>Price:</b> ${toy.price}
+					</p>
+					<div className='flex flex-wrap md:flex-nowrap justify-center'>
+						<div>
+							<Rating style={{ maxWidth: 180 }} value={toy.ratings} readOnly />
+						</div>
 					</div>
 				</div>
 			</div>

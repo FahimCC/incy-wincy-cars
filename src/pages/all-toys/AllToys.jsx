@@ -18,7 +18,7 @@ const AllToys = () => {
 		event.preventDefault();
 		const searchText = event.target.search.value;
 		console.log(searchText);
-		fetch(`http://localhost:5000/all_toys/${searchText}`)
+		fetch(`https://incy-wincy-cars-server.vercel.app/all_toys/${searchText}`)
 			.then(res => res.json())
 			.then(data => setToys(data));
 	};
