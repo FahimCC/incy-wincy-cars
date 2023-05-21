@@ -1,6 +1,7 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useContext, useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
 import { AuthContext } from '../../provider/AuthProvider';
 
 const MyToys = () => {
@@ -25,15 +26,33 @@ const MyToys = () => {
 	}, []);
 
 	const handleDelete = id => {
-		fetch(`http://localhost:5000/my_toys/${id}`, {
-			method: 'DELETE',
-		})
-			.then(res => res.json())
-			.then(data => {
-				console.log(data);
-				const remaining = toys.filter(toy => toy._id !== id);
-				setToys(remaining);
-			});
+		Swal.fire({
+			title: 'Are you sure?',
+			text: "You won't be able to revert this!",
+			icon: 'warning',
+			showCancelButton: true,
+			cancelButtonText: 'No, cancel!',
+			confirmButtonText: 'Yes, delete it!',
+			reverseButtons: true,
+		}).then(result => {
+			if (result.isConfirmed) {
+				fetch(`http://localhost:5000/my_toys/${id}`, {
+					method: 'DELETE',
+				})
+					.then(res => res.json())
+					.then(data => {
+						console.log(data);
+						const remaining = toys.filter(toy => toy._id !== id);
+						setToys(remaining);
+					});
+				Swal.fire('Deleted!', 'Your toy data has been deleted.', 'success');
+			} else if (
+				/* Read more about handling dismissals below */
+				result.dismiss === Swal.DismissReason.cancel
+			) {
+				Swal.fire('Cancelled', 'Your toy data is safe 😊', 'error');
+			}
+		});
 	};
 
 	return (
@@ -80,13 +99,13 @@ const MyToys = () => {
 									{toy.detailsDescription}
 								</td>
 								<td className='space-x-2'>
-									<div
-										onClick={() => handleDelete(toy._id)}
-										className='squeeze badge badge-warning cursor-pointer'
-									>
+									<div className='squeeze badge badge-warning cursor-pointer'>
 										Update
 									</div>
-									<div className='squeeze badge badge-error cursor-pointer'>
+									<div
+										onClick={() => handleDelete(toy._id)}
+										className='squeeze badge badge-error cursor-pointer'
+									>
 										Delete
 									</div>
 								</td>
