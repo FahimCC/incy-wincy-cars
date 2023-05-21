@@ -23,7 +23,7 @@ const MyToys = () => {
 			setToys(data);
 		};
 		loadData();
-	}, []);
+	}, [user]);
 
 	const handleDelete = id => {
 		Swal.fire({

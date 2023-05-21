@@ -1,6 +1,6 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const AllToys = () => {
@@ -11,25 +11,36 @@ const AllToys = () => {
 		});
 	}, []);
 
-	const toys = useLoaderData();
+	const loaderToys = useLoaderData();
+	const [toys, setToys] = useState(loaderToys);
 
-	// console.log(toys[0].sellerName);
+	const handleSearch = event => {
+		event.preventDefault();
+		const searchText = event.target.search.value;
+		console.log(searchText);
+		fetch(`http://localhost:5000/all_toys/${searchText}`)
+			.then(res => res.json())
+			.then(data => setToys(data));
+	};
 
 	return (
 		<div className='container my-20'>
 			<div className='flex justify-center '>
-				<form className='from-control my-8' data-aos='fade-down'>
-					<div className='input-group'>
+				<div className='from-control my-8' data-aos='fade-down'>
+					<form onSubmit={handleSearch} className='input-group'>
 						<input
 							type='text'
+							name='search'
 							placeholder='Search Toy Name'
 							className='input input-bordered input-info w-full min-w-full'
 						/>
-						<button className='squeeze bg-primary px-4 text-white'>
-							Search
-						</button>
-					</div>
-				</form>
+						<input
+							type='submit'
+							value='Search'
+							className='squeeze bg-primary px-4 text-white'
+						/>
+					</form>
+				</div>
 			</div>
 			<div className='overflow-x-auto' data-aos='fade-up'>
 				<table className='table table-compact w-full text-center'>
