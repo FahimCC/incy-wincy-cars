@@ -21,8 +21,8 @@ const ViewToy = () => {
 		<div className='container my-20'>
 			<div className='card lg:card-side bg-base-100 border-2 border-primary shadow-xl'>
 				<div className=' flex justify-center'>
-					<figure className='w-48 md:w-60 lg:w-96 lg:p-10'>
-						<img className='w-full' src={toy.photoURL} alt='Album' />
+					<figure className='w-48 md:w-60 lg:w-96 lg:p-10 rounded-lg'>
+						<img className='w-full rounded-lg' src={toy.photoURL} alt='Album' />
 					</figure>
 				</div>
 				<div className='divider lg:divider-horizontal'></div>
@@ -44,9 +44,9 @@ const ViewToy = () => {
 						<p className='text-xl'>
 							<b>Price:</b> ${toy.price}
 						</p>
-						<div>
+						<p>
 							<Rating style={{ maxWidth: 150 }} value={toy.ratings} readOnly />
-						</div>
+						</p>
 					</div>
 				</div>
 			</div>

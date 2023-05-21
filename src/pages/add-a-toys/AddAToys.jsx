@@ -28,11 +28,14 @@ const AddAToys = () => {
 						title: 'Done',
 						text: 'Toy successfully stored into the database',
 					});
-					navigate('/view-toy');
+					navigate('/');
 				}
 			});
 	};
-	console.log(errors);
+	console.log('Error: ', errors);
+	// if (Object.keys(errors).length !== 0) {
+	// 	toast.error('Please fill up the all field');
+	// }
 
 	return (
 		<div className='container my-20 '>
@@ -46,25 +49,25 @@ const AddAToys = () => {
 							type='text'
 							value={user.displayName}
 							className='insert'
-							{...register('sellerName', { required: true })}
+							{...register('sellerName', {})}
 						/>
 						<input
 							type='email'
 							value={user.email}
 							className='insert'
-							{...register('sellerEmail', { required: true })}
+							{...register('sellerEmail', {})}
 						/>
 					</div>
 					<div className='flex flex-col md:flex-row gap-5'>
 						<input
 							type='text'
-							placeholder='Toy photo URL'
+							placeholder='Toy photo URL *'
 							className='insert'
 							{...register('photoURL', { required: true })}
 						/>
 						<input
 							type='text'
-							placeholder='Toy Name'
+							placeholder='Toy Name *'
 							className='insert'
 							{...register('toyName', { required: true })}
 						/>
@@ -73,13 +76,13 @@ const AddAToys = () => {
 					<div className='flex flex-col md:flex-row gap-5'>
 						<input
 							type='text'
-							placeholder='Sub-category'
+							placeholder='Sub-category *'
 							className='insert'
 							{...register('subCategory', { required: true })}
 						/>
 						<input
 							type='text'
-							placeholder='price'
+							placeholder='Price *'
 							className='insert'
 							{...register('price', { required: true })}
 						/>
@@ -87,19 +90,19 @@ const AddAToys = () => {
 					<div className='flex flex-col md:flex-row gap-5'>
 						<input
 							type='text'
-							placeholder='Ratings'
+							placeholder='Ratings *'
 							className='insert'
 							{...register('ratings', { required: true })}
 						/>
 						<input
 							type='text'
-							placeholder='Available Quantity'
+							placeholder='Available Quantity *'
 							className='insert'
 							{...register('availableQuantity', { required: true })}
 						/>
 					</div>
 					<textarea
-						placeholder='Details Description'
+						placeholder='Details Description *'
 						className='px-3 py-2 border-2 border-primary rounded-lg outline-none focus:border-secondary w-full'
 						{...register('detailsDescription', { required: true })}
 					/>

@@ -1,6 +1,7 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../provider/AuthProvider';
 
 const MyToys = () => {
 	useEffect(() => {
@@ -9,6 +10,20 @@ const MyToys = () => {
 			duration: 600,
 		});
 	}, []);
+
+	const { user } = useContext(AuthContext);
+	const [toys, setToys] = useState([]);
+
+	useEffect(() => {
+		const loadData = async () => {
+			const res = await fetch(`http://localhost:5000/my_toys/${user.email}`);
+			const data = await res.json();
+			// console.log(data);
+			setToys(data);
+		};
+		loadData();
+	}, []);
+
 	return (
 		<div className='container my-20'>
 			<div className='overflow-x-auto' data-aos='fade-up'>
@@ -29,35 +44,39 @@ const MyToys = () => {
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<th>1</th>
-							<td>
-								<div className='avatar'>
-									<div className='mask mask-squircle w-12 h-12'>
-										<img
-											src='https://m.media-amazon.com/images/I/71HA0rWAjOL._AC_UF1000,1000_QL80_.jpg'
-											alt='Avatar Tailwind CSS Component'
-										/>
+						{toys.map((toy, i) => (
+							<tr key={toy._id}>
+								<th>{i + 1}</th>
+								<td>
+									<div className='avatar'>
+										<div className='mask mask-squircle w-12 h-12'>
+											<img
+												src={toy.photoURL}
+												alt='Avatar Tailwind CSS Component'
+											/>
+										</div>
 									</div>
-								</div>
-							</td>
-							<td>Quality Control Specialist</td>
-							<td>Littel, Schaden and Vandervort</td>
-							<td>Canada</td>
-							<td>12/16/2020</td>
-							<td>Blue</td>
-							<td>Blue</td>
-							<td>Blue</td>
-							<td>Blue</td>
-							<td className='space-x-2'>
-								<div className='squeeze badge badge-warning cursor-pointer'>
-									Update
-								</div>
-								<div className='squeeze badge badge-error cursor-pointer'>
-									Delete
-								</div>
-							</td>
-						</tr>
+								</td>
+								<td>{toy.toyName}</td>
+								<td>{toy.sellerName}</td>
+								<td>{toy.sellerEmail}</td>
+								<td>{toy.subCategory}</td>
+								<td>{toy.price}</td>
+								<td>{toy.ratings}</td>
+								<td>{toy.availableQuantity}</td>
+								<td className='max-w-xs overflow-x-scroll'>
+									{toy.detailsDescription}
+								</td>
+								<td className='space-x-2'>
+									<div className='squeeze badge badge-warning cursor-pointer'>
+										Update
+									</div>
+									<div className='squeeze badge badge-error cursor-pointer'>
+										Delete
+									</div>
+								</td>
+							</tr>
+						))}
 					</tbody>
 					<tfoot>
 						<tr>
@@ -75,6 +94,9 @@ const MyToys = () => {
 						</tr>
 					</tfoot>
 				</table>
+			</div>
+			<div className='my-5 text-xl text-center'>
+				<p>Total Show: {toys.length} toys</p>
 			</div>
 		</div>
 	);

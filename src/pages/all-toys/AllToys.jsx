@@ -1,7 +1,7 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const AllToys = () => {
 	useEffect(() => {
@@ -10,6 +10,11 @@ const AllToys = () => {
 			duration: 600,
 		});
 	}, []);
+
+	const toys = useLoaderData();
+
+	// console.log(toys[0].sellerName);
+
 	return (
 		<div className='container my-20'>
 			<div className='flex justify-center '>
@@ -27,7 +32,7 @@ const AllToys = () => {
 				</form>
 			</div>
 			<div className='overflow-x-auto' data-aos='fade-up'>
-				<table className='table table-compact w-full'>
+				<table className='table table-compact w-full text-center'>
 					<thead>
 						<tr>
 							<th></th>
@@ -36,26 +41,28 @@ const AllToys = () => {
 							<th>Sub-category</th>
 							<th>Price</th>
 							<th>Available Quantity</th>
-							<th>Details</th>
+							<th>Action</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<th>1</th>
-							<td>Cy Ganderton</td>
-							<td>Quality Control Specialist</td>
-							<td>Littel, Schaden and Vandervort</td>
-							<td>Canada</td>
-							<td>12/16/2020</td>
-							<td>
-								<Link
-									to='/view-toy'
-									className='squeeze badge badge-info cursor-pointer'
-								>
-									View Details
-								</Link>
-							</td>
-						</tr>
+						{toys.map((toy, index) => (
+							<tr key={toy._id}>
+								<th>{index + 1}</th>
+								<td>{toy.sellerName}</td>
+								<td>{toy.toyName}</td>
+								<td>{toy.subCategory}</td>
+								<td>${toy.price}</td>
+								<td>{toy.availableQuantity}</td>
+								<td>
+									<Link
+										to={`/view-toy/${toy._id}`}
+										className='squeeze badge badge-info cursor-pointer'
+									>
+										View Details
+									</Link>
+								</td>
+							</tr>
+						))}
 					</tbody>
 					<tfoot>
 						<tr>
@@ -65,10 +72,13 @@ const AllToys = () => {
 							<th>Sub-category</th>
 							<th>Price</th>
 							<th>Available Quantity</th>
-							<th>Details</th>
+							<th>Action</th>
 						</tr>
 					</tfoot>
 				</table>
+			</div>
+			<div className='my-5 text-xl text-center'>
+				<p>Total Show: {toys.length} toys</p>
 			</div>
 		</div>
 	);
