@@ -6,8 +6,11 @@ import CustomerReview from './CustomerReview';
 import NewArrivals from './NewArrivals';
 import PhotoGallery from './PhotoGallery';
 import ToyTab from './ToyTab';
+import useTitle from '../../hooks/title';
 
 const Home = () => {
+	useTitle('Home')
+
 	useEffect(() => {
 		AOS.init({
 			delay: 200, // values from 0 to 3000, with step 50ms

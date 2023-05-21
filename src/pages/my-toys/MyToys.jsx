@@ -5,9 +5,12 @@ import { useContext, useEffect, useState } from 'react';
 
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import useTitle from '../../hooks/title';
 import { AuthContext } from '../../provider/AuthProvider';
 
 const MyToys = () => {
+	useTitle('My Toys');
+
 	useEffect(() => {
 		AOS.init({
 			delay: 200, // values from 0 to 3000, with step 50ms

@@ -1,6 +1,7 @@
 import { Rating } from '@smastrom/react-rating';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import useTitle from '../../hooks/title';
 
 const ViewToy = () => {
 	const { id } = useParams();
@@ -19,6 +20,7 @@ const ViewToy = () => {
 		loadData();
 	}, [id]);
 
+	useTitle(toy.toyName);
 	return (
 		<div className='container my-20'>
 			<div className='card lg:card-side bg-base-100 border-2 border-primary shadow-xl'>

@@ -8,8 +8,11 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import google from '../../assets/google.png';
 import login from '../../assets/login.png';
 import { AuthContext } from '../../provider/AuthProvider';
+import useTitle from '../../hooks/title';
 
 const Login = () => {
+	useTitle('Login');
+
 	useEffect(() => {
 		AOS.init({
 			delay: 200, // values from 0 to 3000, with step 50ms

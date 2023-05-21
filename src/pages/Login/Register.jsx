@@ -5,8 +5,11 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import register from '../../assets/register.png';
 import { AuthContext } from '../../provider/AuthProvider';
+import useTitle from '../../hooks/title';
 
 const Register = () => {
+	useTitle('Register');
+
 	useEffect(() => {
 		AOS.init({
 			delay: 200, // values from 0 to 3000, with step 50ms
