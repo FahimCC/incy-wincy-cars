@@ -10,7 +10,7 @@ const ViewToy = () => {
 	useEffect(() => {
 		const loadData = async () => {
 			const res = await fetch(
-				`https://incy-wincy-cars-server.vercel.app/view_toy/${id}`
+				`https://incy-wincy-cars-server-fahimcc.vercel.app/view_toy/${id}`
 			);
 			const data = await res.json();
 			setToy(data);

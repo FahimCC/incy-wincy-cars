@@ -1,6 +1,9 @@
+/* eslint-disable react/no-unescaped-entities */
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useContext, useEffect, useState } from 'react';
+
+import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../provider/AuthProvider';
 
@@ -14,10 +17,11 @@ const MyToys = () => {
 
 	const { user } = useContext(AuthContext);
 	const [toys, setToys] = useState([]);
+	// `https://incy-wincy-cars-server-fahimcc.vercel.app/my_toys/${user.email}`
 
 	useEffect(() => {
 		const loadData = async () => {
-			const res = await fetch(`https://incy-wincy-cars-server.vercel.app/my_toys/${user.email}`);
+			const res = await fetch(`http://localhost:5000/my_toys/${user.email}`);
 			const data = await res.json();
 			// console.log(data);
 			setToys(data);
@@ -56,7 +60,7 @@ const MyToys = () => {
 	};
 
 	return (
-		<div className='container my-20'>
+		<div className='container my-20 h-screen'>
 			<div className='overflow-x-auto' data-aos='fade-up'>
 				<table className='table table-compact w-full'>
 					<thead>
@@ -99,9 +103,12 @@ const MyToys = () => {
 									{toy.detailsDescription}
 								</td>
 								<td className='space-x-2'>
-									<div className='squeeze badge badge-warning cursor-pointer'>
+									<Link
+										to={`/update-toy/${toy._id}`}
+										className='squeeze badge badge-warning cursor-pointer'
+									>
 										Update
-									</div>
+									</Link>
 									<div
 										onClick={() => handleDelete(toy._id)}
 										className='squeeze badge badge-error cursor-pointer'

@@ -14,7 +14,7 @@ const AddAToys = () => {
 		formState: { errors },
 	} = useForm();
 	const onSubmit = data => {
-		fetch(`https://incy-wincy-cars-server.vercel.app/add_toy`, {
+		fetch(`https://incy-wincy-cars-server-fahimcc.vercel.app/add_toy`, {
 			method: 'POST',
 			headers: { 'content-type': 'application/json' },
 			body: JSON.stringify(data),
