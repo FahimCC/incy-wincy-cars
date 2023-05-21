@@ -2,8 +2,11 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
+import useTitle from '../../hooks/title';
 
 const Blog = () => {
+	useTitle('Blog');
+
 	useEffect(() => {
 		AOS.init({
 			delay: 200, // values from 0 to 3000, with step 50ms

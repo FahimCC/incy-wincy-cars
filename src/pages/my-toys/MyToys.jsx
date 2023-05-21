@@ -5,9 +5,12 @@ import { useContext, useEffect, useState } from 'react';
 
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import useTitle from '../../hooks/title';
 import { AuthContext } from '../../provider/AuthProvider';
 
 const MyToys = () => {
+	useTitle('My Toys');
+
 	useEffect(() => {
 		AOS.init({
 			delay: 200, // values from 0 to 3000, with step 50ms
@@ -17,17 +20,19 @@ const MyToys = () => {
 
 	const { user } = useContext(AuthContext);
 	const [toys, setToys] = useState([]);
-	// `https://incy-wincy-cars-server-fahimcc.vercel.app/my_toys/${user.email}`
+	const [sort, setSort] = useState(1);
 
 	useEffect(() => {
 		const loadData = async () => {
-			const res = await fetch(`http://localhost:5000/my_toys/${user.email}`);
+			const res = await fetch(
+				`https://incy-wincy-cars-server-fahimcc.vercel.app/my_toys?sellerName=${user.email}&sort=${sort}`
+			);
 			const data = await res.json();
 			// console.log(data);
 			setToys(data);
 		};
 		loadData();
-	}, [user]);
+	}, [user, sort]);
 
 	const handleDelete = id => {
 		Swal.fire({
@@ -40,9 +45,12 @@ const MyToys = () => {
 			reverseButtons: true,
 		}).then(result => {
 			if (result.isConfirmed) {
-				fetch(`http://localhost:5000/my_toys/${id}`, {
-					method: 'DELETE',
-				})
+				fetch(
+					`https://incy-wincy-cars-server-fahimcc.vercel.app/my_toys/${id}`,
+					{
+						method: 'DELETE',
+					}
+				)
 					.then(res => res.json())
 					.then(data => {
 						console.log(data);
@@ -59,8 +67,21 @@ const MyToys = () => {
 		});
 	};
 
+	const handleSort = event => {
+		setSort(event.target.value);
+	};
+
 	return (
-		<div className='container my-20 h-screen'>
+		<div className='container my-20'>
+			<div className='text-right my-5'>
+				<select onChange={handleSort} className='insert max-w-xs'>
+					<option selected disabled>
+						Sort by Price
+					</option>
+					<option value='1'>Ascending</option>
+					<option value='-1'>Descending</option>
+				</select>
+			</div>
 			<div className='overflow-x-auto' data-aos='fade-up'>
 				<table className='table table-compact w-full'>
 					<thead>

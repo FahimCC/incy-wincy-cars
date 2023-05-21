@@ -2,8 +2,10 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import useTitle from '../../hooks/title';
 
 const AllToys = () => {
+	useTitle('All Toys');
 	useEffect(() => {
 		AOS.init({
 			delay: 200, // values from 0 to 3000, with step 50ms
@@ -18,7 +20,7 @@ const AllToys = () => {
 		event.preventDefault();
 		const searchText = event.target.search.value;
 		console.log(searchText);
-		fetch(`https://incy-wincy-cars-server-fahimcc.vercel.app/all_toys/${searchText}`)
+		fetch(`https://incy-wincy-cars-server-fahimcc.vercel.app/${searchText}`)
 			.then(res => res.json())
 			.then(data => setToys(data));
 	};
