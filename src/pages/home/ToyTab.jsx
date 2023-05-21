@@ -11,7 +11,7 @@ const ToyTab = () => {
 	useEffect(() => {
 		const loadData = async () => {
 			const res = await fetch(
-				`https://incy-wincy-cars-server-fahimcc.vercel.app/${subCategory}`
+				`http://localhost:5000/${subCategory}`
 			);
 			const data = await res.json();
 			// console.log(data);
