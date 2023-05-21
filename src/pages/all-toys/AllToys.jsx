@@ -20,7 +20,7 @@ const AllToys = () => {
 		event.preventDefault();
 		const searchText = event.target.search.value;
 		console.log(searchText);
-		fetch(`https://incy-wincy-cars-server-fahimcc.vercel.app/${searchText}`)
+		fetch(`https://incy-wincy-cars-server-fahimcc.vercel.app/all_toys/${searchText}`)
 			.then(res => res.json())
 			.then(data => setToys(data));
 	};

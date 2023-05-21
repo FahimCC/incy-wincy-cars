@@ -9,7 +9,6 @@ const UpdateToy = () => {
 	const navigate = useNavigate();
 	const { id } = useParams();
 	const [toy, setToy] = useState([]);
-	// `https://incy-wincy-cars-server-fahimcc.vercel.app/update_toy/${id}`
 
 	useEffect(() => {
 		const loadData = async () => {
@@ -32,13 +31,16 @@ const UpdateToy = () => {
 
 		const data = { price, availableQuantity, detailsDescription };
 
-		fetch(`http://localhost:5000/update_toy/${id}`, {
-			method: 'PATCH',
-			headers: {
-				'content-type': 'application/json',
-			},
-			body: JSON.stringify(data),
-		})
+		fetch(
+			`https://incy-wincy-cars-server-fahimcc.vercel.app/update_toy/${id}`,
+			{
+				method: 'PATCH',
+				headers: {
+					'content-type': 'application/json',
+				},
+				body: JSON.stringify(data),
+			}
+		)
 			.then(res => res.json())
 			.then(data => {
 				if (data.modifiedCount > 0) {
