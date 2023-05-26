@@ -25,7 +25,9 @@ const MyToys = () => {
 
 	useEffect(() => {
 		const loadData = async () => {
-			const res = await fetch(`https://incy-wincy-cars-server-fahimcc.vercel.app/my_toys?sellerName=${user.email}&sort=${sort}`);
+			const res = await fetch(
+				`https://incy-wincy-cars-server-fahimcc.vercel.app/my_toys?email=${user.email}&sort=${sort}`
+			);
 			const data = await res.json();
 			// console.log(data);
 			setToys(data);
