@@ -20,12 +20,12 @@ const MyToys = () => {
 
 	const { user } = useContext(AuthContext);
 	const [toys, setToys] = useState([]);
-	const [sort, setSort] = useState(0);
+	const [sort, setSort] = useState(1);
 	// `https://incy-wincy-cars-server-fahimcc.vercel.app/my_toys/${user.email}`
 
 	useEffect(() => {
 		const loadData = async () => {
-			const res = await fetch(`https://incy-wincy-cars-server-fahimcc.vercel.app/my_toys/${user.email}`);
+			const res = await fetch(`https://incy-wincy-cars-server-fahimcc.vercel.app/my_toys?sellerName=${user.email}&sort=${sort}`);
 			const data = await res.json();
 			// console.log(data);
 			setToys(data);
